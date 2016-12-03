@@ -12,7 +12,7 @@ void Motors::driveForward() {
     rightForward();
 }
 
-void Motors::do180() {
+void Motors::turn() {
     rightForward();
     leftReverse();
 }

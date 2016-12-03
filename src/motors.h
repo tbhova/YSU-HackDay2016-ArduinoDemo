@@ -9,7 +9,7 @@ public:
     Motors();
     void stop();
     void driveForward();
-    void do180();
+    void turn();
 
 
 private:

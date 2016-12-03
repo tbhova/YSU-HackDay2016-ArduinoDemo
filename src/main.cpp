@@ -38,7 +38,7 @@ void loop() {
 //    Serial.println(readIRSensor());
     if ((int)readIRSensor() > wallDistance) {
 //        Serial.println(readIRSensor());
-        motors.do180();
+        motors.turn();
         delay(3000);
         digitalWriteFast(LED1, LOW);
         digitalWriteFast(LED2, HIGH);
