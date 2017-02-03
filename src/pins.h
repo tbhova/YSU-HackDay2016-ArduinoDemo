@@ -1,14 +1,23 @@
 #ifndef PINS_H
 #define PINS_H
 
-const int   Left_Motor_Forward = 29,
-            Left_Motor_Reverse = 30,
-            Right_Motor_Forward = 2,
-            Right_Motor_Reverse = 3,
-            Left_Motor_Speed = 8,
-            Right_Motor_Speed = 7,
-            IR_Sensor = 23,
-            LED1 = 4,
-            LED2 = 6;
+//Digital Pins
+const int   LEFT_MOTOR_FORWARD      = 9,
+            LEFT_MOTOR_REVERSE      = 8,
+            RIGHT_MOTOR_FORWARD     = 11,
+            RIGHT_MOTOR_REVERSE     = 12,
+            LEFT_MOTOR_SPEED        = 7,
+            RIGHT_MOTOR_SPEED       = 10,
+            MOTOR_STANDBY           = 24,
+            LEFT_MOTOR_ENCODER_A    = 37,
+            LEFT_MOTOR_ENCODER_B    = 38,
+            RIGHT_MOTOR_ENCODER_A   = 27,
+            RIGHT_MOTOR_ENCODER_B   = 28;
+
+//Analog Input Pins
+#define IR_SENSOR_LEFT      A13 //pin 32
+#define IR_SENSOR_CENTER    A14 //pin 33
+#define IR_SENSOR_RIGHT     A15 //pin 34
+
 
 #endif // PINS_H

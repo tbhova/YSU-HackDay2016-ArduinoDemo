@@ -22,38 +22,43 @@ void Motors::stop() {
     leftStop();
 }
 
+void Motors::reverse() {
+    leftReverse();
+    rightReverse();
+}
+
 void Motors::leftForward() {
-    digitalWrite(Left_Motor_Reverse, LOW);
-    digitalWrite(Left_Motor_Forward, HIGH);
-    analogWrite(Left_Motor_Speed, power);
+    digitalWrite(LEFT_MOTOR_REVERSE, LOW);
+    digitalWrite(LEFT_MOTOR_FORWARD, HIGH);
+    analogWrite(LEFT_MOTOR_SPEED, power);
 }
 
 void Motors::leftStop() {
-    digitalWrite(Left_Motor_Forward, LOW);
-    digitalWrite(Left_Motor_Reverse, LOW);
-    analogWrite(Left_Motor_Speed, off);
+    digitalWrite(LEFT_MOTOR_FORWARD, LOW);
+    digitalWrite(LEFT_MOTOR_REVERSE, LOW);
+    analogWrite(LEFT_MOTOR_SPEED, off);
 }
 
 void Motors::leftReverse() {
-    digitalWrite(Left_Motor_Forward, LOW);
-    digitalWrite(Left_Motor_Reverse, HIGH);
-    analogWrite(Left_Motor_Speed, power);
+    digitalWrite(LEFT_MOTOR_FORWARD, LOW);
+    digitalWrite(LEFT_MOTOR_REVERSE, HIGH);
+    analogWrite(LEFT_MOTOR_SPEED, power);
 }
 
 void Motors::rightForward() {
-    digitalWrite(Right_Motor_Reverse, LOW);
-    digitalWrite(Right_Motor_Forward, HIGH);
-    analogWrite(Right_Motor_Speed, power);
+    digitalWrite(RIGHT_MOTOR_REVERSE, LOW);
+    digitalWrite(RIGHT_MOTOR_FORWARD, HIGH);
+    analogWrite(RIGHT_MOTOR_SPEED, power);
 }
 
 void Motors::rightReverse() {
-    digitalWrite(Right_Motor_Forward, LOW);
-    digitalWrite(Right_Motor_Reverse, HIGH);
-    analogWrite(Right_Motor_Speed, power);
+    digitalWrite(RIGHT_MOTOR_FORWARD, LOW);
+    digitalWrite(RIGHT_MOTOR_REVERSE, HIGH);
+    analogWrite(RIGHT_MOTOR_SPEED, power);
 }
 
 void Motors::rightStop() {
-    digitalWrite(Right_Motor_Reverse, LOW);
-    digitalWrite(Right_Motor_Forward, LOW);
-    analogWrite(Right_Motor_Speed, off);
+    digitalWrite(RIGHT_MOTOR_REVERSE, LOW);
+    digitalWrite(RIGHT_MOTOR_FORWARD, LOW);
+    analogWrite(RIGHT_MOTOR_SPEED, off);
 }

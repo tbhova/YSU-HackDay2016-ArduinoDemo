@@ -8,40 +8,37 @@
 Motors motors;
 
 int readIRSensor() {
-    return analogRead(IR_Sensor);
+    return analogRead(IR_SENSOR_CENTER);
 }
 
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
-    pinMode(Left_Motor_Forward, OUTPUT);
-    pinMode(Left_Motor_Reverse, OUTPUT);
-    pinMode(Right_Motor_Forward, OUTPUT);
-    pinMode(Right_Motor_Reverse, OUTPUT);
-    pinMode(Right_Motor_Speed, OUTPUT);
-    pinMode(Left_Motor_Speed, OUTPUT);
-    pinMode(IR_Sensor, INPUT);
-    pinMode(LED1, OUTPUT);
-    pinMode(LED2, OUTPUT);
+    pinMode(LEFT_MOTOR_FORWARD, OUTPUT);
+    pinMode(LEFT_MOTOR_REVERSE, OUTPUT);
+    pinMode(RIGHT_MOTOR_FORWARD, OUTPUT);
+    pinMode(RIGHT_MOTOR_REVERSE, OUTPUT);
+    pinMode(RIGHT_MOTOR_SPEED, OUTPUT);
+    pinMode(LEFT_MOTOR_SPEED, OUTPUT);
+    pinMode(MOTOR_STANDBY, OUTPUT);
+    pinMode(IR_SENSOR_CENTER, INPUT);
 
     Serial.begin(9600);
     delay(6000);
+
+    digitalWriteFast(MOTOR_STANDBY, HIGH);
 }
 
 void loop() {
-    digitalWriteFast(LED2, LOW);
-    digitalWriteFast(LED1, HIGH);
-    motors.driveForward();
 
     const int wallDistance = 500;
-//    Serial.print((int)readIRSensor() > wallDistance);
-//    Serial.print(" ");
-//    Serial.println(readIRSensor());
     if ((int)readIRSensor() > wallDistance) {
-//        Serial.println(readIRSensor());
+        motors.reverse();
+        delay(900);
         motors.turn();
-        delay(3000);
-        digitalWriteFast(LED1, LOW);
-        digitalWriteFast(LED2, HIGH);
+        delay(400);
+    } else {
+        motors.driveForward();
+        delay(300);
     }
 
 }

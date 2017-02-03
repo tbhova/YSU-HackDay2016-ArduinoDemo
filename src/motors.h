@@ -10,6 +10,7 @@ public:
     void stop();
     void driveForward();
     void turn();
+    void reverse();
 
 
 private:
@@ -19,7 +20,7 @@ private:
     void leftForward();
     void leftStop();
     void leftReverse();
-    const int power = 127, off = 0;
+    const int power = 128, off = 0;
 
 };
 
